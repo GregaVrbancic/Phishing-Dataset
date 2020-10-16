@@ -1,22 +1,22 @@
-# Phishing Dataset
+# Datasets for Phishing Websites Detection
 
-In this repository the two variants of the Phishing Dataset are presented.
+In this repository the two variants of the phishing dataset are presented.
 
-## Full variant - vrbancic_phishing_dataset.csv
+## dataset_full - dataset_full.csv
 
 **Short description of the full variant dataset:**
 - Total number of instances: 88,647
     - Number of legitimate website instances (labeled as 0): 58,000
     - Number of phishing website instances (labeled as 1): 30,647
-- Total number of features: 111
+- Total number of features: 111 (without target)
 
-## Small variant - vrbancic_phishing_dataset_small.csv
+## dataset_small - dataset_small.csv
 
 **Short description of the small variant dataset:**
-- Total number of instances: 58,645 
+- Total number of instances: 58,645
     - Number of legitimate website instances (labeled as 0): 27,998
     - Number of phishing website instances (labeled as 1): 30,647
-- Total number of features: 111
+- Total number of features: 111 (without target)
 
 ## Extracted Features
 
@@ -71,7 +71,7 @@ In this repository the two variants of the Phishing Dataset are presented.
 | qty_at_directory           | count (@) in directory                             |
 | qty_and_directory          | count (&) in directory                             |
 | qty_exclamation_directory	 | count (!) in directory                             |
-| qty_space_directory        | count ( ) in directory                             | 
+| qty_space_directory        | count ( ) in directory                             |
 | qty_tilde_directory        | count (~) in directory                             |
 | qty_comma_directory        | count (,) in directory                             |
 | qty_plus_directory         | count (+) in directory                             |
