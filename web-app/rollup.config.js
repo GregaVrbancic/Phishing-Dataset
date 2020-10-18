@@ -5,10 +5,11 @@ import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 
 const production = !process.env.ROLLUP_WATCH;
+const baseUrl = production ? require("./package.json").baseUrl : "";
 
 function serve() {
 	let server;
-	
+
 	function toExit() {
 		if (server) server.kill(0);
 	}
@@ -27,13 +28,24 @@ function serve() {
 	};
 }
 
+function template(option) {
+	let fs = require("fs");
+	let templatePath = option.templatePath;
+	let baseUrl = option.baseUrl;
+	let outputPath = option.outputPath;
+
+	let T = fs.readFileSync(templatePath, "utf-8");
+	T = T.replace(/%base%/g, baseUrl ? `${baseUrl}/` : "");
+	fs.writeFileSync(outputPath, T);
+}
+
 export default {
 	input: 'src/main.js',
 	output: {
 		sourcemap: true,
 		format: 'iife',
 		name: 'app',
-		file: 'public/build/bundle.js'
+		file: 'public/build/bundle.js',
 	},
 	plugins: [
 		svelte({
@@ -56,6 +68,13 @@ export default {
 			dedupe: ['svelte']
 		}),
 		commonjs(),
+
+		// Generate index.html and manifest.json for production build
+		template({
+			templatePath: "src/templates/index.html",
+			baseUrl: baseUrl,
+			outputPath: "public/index.html"
+		}),
 
 		// In dev mode, call `npm run start` once
 		// the bundle has been generated

@@ -3,6 +3,7 @@ dependencies:
 devDependencies:
   '@rollup/plugin-commonjs': 14.0.0_rollup@2.32.0
   '@rollup/plugin-node-resolve': 8.4.0_rollup@2.32.0
+  '@rollup/plugin-url': 5.0.1_rollup@2.32.0
   gh-pages: 3.1.0
   rollup: 2.32.0
   rollup-plugin-livereload: 2.0.0
@@ -67,6 +68,19 @@ packages:
       rollup: ^1.20.0||^2.0.0
     resolution:
       integrity: sha512-LFqKdRLn0ShtQyf6SBYO69bGE1upV6wUhBX0vFOUnLAyzx5cwp8svA0eHUnu8+YU57XOkrMtfG63QOpQx25pHQ==
+  /@rollup/plugin-url/5.0.1_rollup@2.32.0:
+    dependencies:
+      '@rollup/pluginutils': 3.1.0_rollup@2.32.0
+      make-dir: 3.1.0
+      mime: 2.4.6
+      rollup: 2.32.0
+    dev: true
+    engines:
+      node: '>=8.0.0'
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0
+    resolution:
+      integrity: sha512-/dO8Ic+vR9VtMkHjmFBWzISjX0iDwrB3vLg8sy4A7hxu2Uk0J09kAXbtku7gJb1fqVcJUIByFG5d/4sgNh1DvA==
   /@rollup/pluginutils/3.1.0_rollup@2.32.0:
     dependencies:
       '@types/estree': 0.0.39
@@ -542,7 +556,6 @@ packages:
     resolution:
       integrity: sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==
   /mime/2.4.6:
-    dev: false
     engines:
       node: '>=4.0.0'
     hasBin: true
@@ -938,6 +951,7 @@ packages:
 specifiers:
   '@rollup/plugin-commonjs': ^14.0.0
   '@rollup/plugin-node-resolve': ^8.0.0
+  '@rollup/plugin-url': ^5.0.1
   gh-pages: ^3.1.0
   rollup: ^2.3.4
   rollup-plugin-livereload: ^2.0.0

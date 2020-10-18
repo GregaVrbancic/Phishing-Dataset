@@ -1,10 +1,9 @@
 <script>
-	export let name;
 </script>
 
 <main>
 	<h1>Phishing Datasets Web App</h1>
-	<p>Under development!</p>
+	<p>Under the development!</p>
 </main>
 
 <style>
