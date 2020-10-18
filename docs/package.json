@@ -7,7 +7,7 @@
     "dev": "rollup -c -w",
     "start": "sirv public",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^14.0.0",
