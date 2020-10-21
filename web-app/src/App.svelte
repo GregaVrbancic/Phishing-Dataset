@@ -2,7 +2,7 @@
   import NavBar from './NavBar.svelte';
 </script>
 
-<style type="text/scss">
+<style type="text/scss" global>
 @import "bulma/bulma";
 
   :global(a) {
