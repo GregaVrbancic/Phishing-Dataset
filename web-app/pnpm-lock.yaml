@@ -1,8 +1,11 @@
 dependencies:
   bulma: 0.9.1
   node-sass: 4.14.1
+  papaparse: 5.3.0
   rollup-plugin-postcss: 3.1.8
   sirv-cli: 1.0.7
+  svelte-content-loader: 1.1.3
+  svelte-data-grid: 3.0.0
   svelte-preprocess: 4.5.1_node-sass@4.14.1+svelte@3.29.0
   svelte-select: 3.12.0
 devDependencies:
@@ -727,12 +730,20 @@ packages:
       node: '>=0.10'
     resolution:
       integrity: sha1-hTz6D3y+L+1d4gMmuN1YEDX24vA=
+  /debounce/1.2.0:
+    dev: false
+    resolution:
+      integrity: sha512-mYtLl1xfZLi1m4RtQYlZgJUNQjl4ZxVnHzIR8nLLgi4q1YT8o/WM+MK/f8yfcc9s5Ir5zRaPZyZU6xs1Syoocg==
   /decamelize/1.2.0:
     dev: false
     engines:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-9lNNFRSCabIDUue+4m9QH5oZEpA=
+  /deep-diff/1.0.2:
+    dev: false
+    resolution:
+      integrity: sha512-aWS3UIVH+NPGCD1kki+DCU9Dua032iSsO43LqQpcs4R3+dVv7tX0qBGjiVHJHjplsoUM2XRO/KB92glqc68awg==
   /deep-freeze/0.0.1:
     dev: true
     resolution:
@@ -761,6 +772,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-hMbhWbgZBP3KWaDvRM2HDTElD5o=
+  /detect-browser/4.8.0:
+    dev: false
+    resolution:
+      integrity: sha512-f4h2dFgzHUIpjpBLjhnDIteXv8VQiUm8XzAuzQtYUqECX/eKh67ykuiVoyb7Db7a0PUSmJa3OGXStG0CbQFUVw==
   /detect-indent/6.0.0:
     dev: false
     engines:
@@ -2004,6 +2019,10 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==
+  /papaparse/5.3.0:
+    dev: false
+    resolution:
+      integrity: sha512-Lb7jN/4bTpiuGPrYy4tkKoUS8sTki8zacB5ke1p5zolhcSE4TlWgrlsxjrDTbG/dFVh07ck7X36hUf/b5V68pg==
   /parse-json/2.2.0:
     dependencies:
       error-ex: 1.3.2
@@ -3086,6 +3105,18 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==
+  /svelte-content-loader/1.1.3:
+    dev: false
+    resolution:
+      integrity: sha512-hXkwyAXiZ+2uNvWUHPj9U7M+8PGqgZVFNxyOHjLUF1ng4W9P9+9wlyT/bNx5BjuqoJsfjv1IZP1/5T1LfRKtYA==
+  /svelte-data-grid/3.0.0:
+    dependencies:
+      debounce: 1.2.0
+      deep-diff: 1.0.2
+      detect-browser: 4.8.0
+    dev: false
+    resolution:
+      integrity: sha512-vciX9xV49PLdGlJjiLO6WW5IpxeK8P1itP4HLetQeK9bfP5gqC3Jr8R94OGZ7rVPEzjRkQzuiBMGyPh0uIhLfw==
   /svelte-feather-icons/3.3.0:
     dev: true
     resolution:
@@ -3391,6 +3422,7 @@ specifiers:
   bulma: ^0.9.1
   gh-pages: ^3.1.0
   node-sass: ^4.14.1
+  papaparse: ^5.3.0
   rollup: ^2.3.4
   rollup-plugin-livereload: ^2.0.0
   rollup-plugin-postcss: ^3.1.8
@@ -3398,6 +3430,8 @@ specifiers:
   rollup-plugin-terser: ^7.0.0
   sirv-cli: ^1.0.0
   svelte: ^3.0.0
+  svelte-content-loader: ^1.1.3
+  svelte-data-grid: ^3.0.0
   svelte-feather-icons: ^3.3.0
   svelte-preprocess: ^4.5.1
   svelte-select: ^3.12.0

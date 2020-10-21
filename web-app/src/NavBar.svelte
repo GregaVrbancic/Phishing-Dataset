@@ -7,8 +7,9 @@
 </script>
 
 <style type="text/scss">
+$border: #efefef;
   .navbar {
-    border-bottom: 1px solid #efefef;
+    border-bottom: 1px solid $border;
 
     .navbar-brand {
       display: flex;
@@ -63,7 +64,7 @@
       <h1>Phishing Datasets Web App</h1>
     </a>
 
-    <a role="button" aria-label="menu" aria-expanded="false" on:click="{() => isHamburgerActive = !isHamburgerActive}" class="{isHamburgerActive ? 'navbar-burger burger is-active' : 'navbar-burger burger'}" data-target="navbar">
+    <a role="button" href="#" aria-label="menu" aria-expanded="false" on:click="{() => isHamburgerActive = !isHamburgerActive}" class="{isHamburgerActive ? 'navbar-burger burger is-active' : 'navbar-burger burger'}" data-target="navbar">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -74,7 +75,7 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a>
+          <a href="https://github.com/GregaVrbancic/Phishing-Dataset">
             <GithubIcon size="24" />
           </a>
         </div>

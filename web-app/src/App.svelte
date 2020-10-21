@@ -1,47 +1,32 @@
 <script>
-  import NavBar from './NavBar.svelte';
+  import NavBar from './NavBar.svelte'
+  import DatasetContent from './DatasetContent.svelte'
 </script>
 
 <style type="text/scss" global>
-@import "bulma/bulma";
+  @import 'bulma/bulma';
 
-  :global(a) {
-    color: #ff3e00;
+  $primary: #ff3e00;
+  $secondary: #af2d02;
+
+  :global(a),
+  :global(a:visited) {
+    color: $primary;
     &:hover {
       text-decoration: none;
+      color: $secondary;
     }
   }
 
-  .title {
-    font-size: 1rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
-    font-style: italic;
+  :global(.full-height) {
+    height: 100%;
   }
 </style>
 
 <main>
 
   <NavBar />
-
-  <section class="section">
-	<div class="columns is-desktop">
-		<div class="column is-three-quarters">
-		  <div class="columns">
-			<div class="column is-one-third">
-				<p class="title">Configure own dataset variation</p>
-				<p class="subtitle">Select the dataset ratio and features.</p>
-			</div>
-			<div class="column"><p class="title">Dataset variation preview</p></div>
-		  </div>
-		</div>
-		<div class="column">
-			<p class="title">Download the original dataset variations</p>
-		</div>
-	  </div>
-  </section>
+  <DatasetContent />
 
   <footer class="footer">
     <div class="content has-text-centered">
@@ -51,7 +36,7 @@
         <a href="https://grega.xyz">Grega Vrbančič</a>
         . The source code is licensed
         <a href="http://opensource.org/licenses/mit-license.php">MIT</a>
-        . The website content.
+        .
       </p>
     </div>
   </footer>
