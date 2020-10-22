@@ -5,6 +5,8 @@
   import Papa from 'papaparse'
   import DataGrid from 'svelte-data-grid'
 
+  import DistributionChart from './DistributionChart.svelte'
+
   let isLoading = true
 
   let features = []
@@ -28,32 +30,31 @@
       .then((data) => {
         let csv = Papa.parse(data, {
           header: true,
-          step: step,
+          worker: true,
+          step: onStep,
+          complete: onComplete,
         })
-        selectedPhishing = countPhishing
-        selectedLegitimate = countLegitimate
-
-        //console.log(csv);
-        //console.log(rows);
-
-        // prepare and store features list
-        features = csv.meta['fields']
-        columns = features.map((feature) => ({
-          display: feature,
-          dataName: feature,
-          width: 100,
-        }))
-        //console.log(columns);
-
-        isLoading = false
       })
-    // console.log(promise.body);
   })
 
-  const step = (results, parser) => {
-    //console.log(results.data)
+  const onStep = (results, parser) => {
+    // console.log(results.data)
+    //console.log(parser)
     let row = results.data
-    row['id'] = rowId
+    //row['id'] = rowId
+
+    if (rowId == 1) {
+      // prepare and store features list
+      features = Object.keys(row) //csv.meta['fields']
+      columns = features.map((feature) => ({
+        display: feature,
+        dataName: feature,
+        width: 100,
+      }))
+
+      console.log(features)
+      console.log(columns)
+    }
 
     if (row['phishing'] == 1) {
       countPhishing++
@@ -64,6 +65,26 @@
     rows.push(row)
 
     rowId++
+  }
+
+  const onComplete = (results, file) => {
+    console.log('Parsing complete')
+    selectedPhishing = countPhishing
+    selectedLegitimate = countLegitimate
+
+    //console.log(csv);
+    //console.log(rows);
+
+    // prepare and store features list
+    /*features = csv.meta['fields']
+        columns = features.map((feature) => ({
+          display: feature,
+          dataName: feature,
+          width: 100,
+        }))*/
+    //console.log(columns);
+
+    isLoading = false
   }
 
   const handleSelect = (selectedVal) => {
@@ -95,7 +116,7 @@
   }
 
   .is-fullheight.columns {
-    height: calc(100vh - (19.25rem - 0.75rem));
+    height: calc(100vh - (20rem - 0.75rem));
   }
 
   .dataview {
@@ -105,14 +126,16 @@
     border-left: 1px ridge $border;
 
     .data-item {
+        margin-bottom: 3rem;
     }
 
     .fill-height {
-        flex: 1 1 100%;
+      flex: 1 1 100%;
     }
   }
 
-  .download-item, .configuration-item {
+  .download-item,
+  .configuration-item {
     padding-bottom: 1.5rem;
     margin-bottom: 1.5rem;
     font-size: 0.8rem;
@@ -132,35 +155,35 @@
             <ListLoader uniqueKey="propertiesLoader" />
           {:else}
             <div class="configuration-item">
-                <p class="title">Configure own dataset variation</p>
-            <p class="subtitle">Select the dataset ratio and features.</p>
-            <label for="selectPhishing">
-              Select nr. of phishing instances:
-            </label>
-            <input
-              id="selectPhishing"
-              type="range"
-              bind:value={selectedPhishing}
-              min="0"
-              max="10" />
-            {selectedPhishing}/{countPhishing}
-            <label for="selectLegitimate">
-              Select nr. of phishing instances:
-            </label>
-            <input
-              id="selectLegitimate"
-              type="range"
-              bind:value={selectedLegitimate}
-              min="0"
-              max="10" />
-            {selectedLegitimate}/{countLegitimate}
-            <label for="selectFeatures">Select features:</label>
-            <Select
-              id="selectFeatures"
-              items={features}
-              isMulti={true}
-              on:select={handleSelect}
-              on:clear={handleClear} />
+              <p class="title">Configure own dataset variation</p>
+              <p class="subtitle">Select the dataset ratio and features.</p>
+              <label for="selectPhishing">
+                Select nr. of phishing instances:
+              </label>
+              <input
+                id="selectPhishing"
+                type="range"
+                bind:value={selectedPhishing}
+                min="0"
+                max="10" />
+              {selectedPhishing}/{countPhishing}
+              <label for="selectLegitimate">
+                Select nr. of phishing instances:
+              </label>
+              <input
+                id="selectLegitimate"
+                type="range"
+                bind:value={selectedLegitimate}
+                min="0"
+                max="10" />
+              {selectedLegitimate}/{countLegitimate}
+              <label for="selectFeatures">Select features:</label>
+              <Select
+                id="selectFeatures"
+                items={features}
+                isMulti={true}
+                on:select={handleSelect}
+                on:clear={handleClear} />
             </div>
           {/if}
         </div>
@@ -170,15 +193,7 @@
           {:else}
             <div class="data-item">
               <p class="title">Dataset distribution</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In purus ante, pretium non pellentesque quis, suscipit sit amet dui. Phasellus fermentum, nisi quis pellentesque tincidunt, sapien est accumsan nunc, vel convallis leo lorem sed metus. In nec accumsan neque, at euismod risus. Vivamus pellentesque nulla at leo facilisis maximus. Quisque malesuada nisi et convallis rhoncus. Nullam sapien mi, dapibus ut enim in, pharetra ornare augue. Vestibulum bibendum pretium mi, sit amet dictum lacus convallis ut. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus quam nunc, pulvinar sed mauris a, facilisis bibendum massa. Vivamus sit amet pulvinar neque. Aenean libero nisi, ornare nec libero et, iaculis lobortis tortor.
-
-Nunc sagittis est purus, vel pellentesque nisl egestas sit amet. Nunc et nisi ac enim eleifend laoreet. Pellentesque porta velit turpis, et euismod diam gravida vitae. Nulla molestie mauris at arcu consectetur malesuada. Nunc vehicula consectetur augue. Nulla fermentum auctor neque et semper. Morbi porttitor metus justo, id commodo est aliquam ut.
-
-Nulla ut varius ipsum, id ornare eros. Aliquam quis libero blandit, eleifend nibh quis, tincidunt lectus. Praesent iaculis sodales finibus. Suspendisse feugiat dictum magna. Nam sed dictum nulla. Etiam nec magna tincidunt, sollicitudin risus non, pulvinar nibh. Aenean consequat eu nulla ac laoreet. Ut vehicula, est id rhoncus congue, dui erat pharetra arcu, congue commodo purus odio sed elit. Duis vel ex in sapien scelerisque lacinia. Vestibulum eget mauris mollis lacus interdum pretium.
-
-Donec laoreet consequat ipsum sed volutpat. Duis nec elit rhoncus, condimentum ipsum sit amet, pretium quam. Maecenas vel aliquet turpis. Suspendisse at cursus ipsum. Pellentesque ullamcorper diam odio, at semper velit consequat non. Praesent dignissim congue neque, porta tincidunt ipsum mollis sit amet. Quisque consequat, mi ac mattis imperdiet, velit eros efficitur ligula, vel finibus nunc arcu ut tortor. Cras eget massa laoreet mi fringilla tempus ac vitae ante. Nunc eget erat vitae ex aliquet sagittis id a dui. Vivamus consectetur dui nulla, id mattis ante lobortis vitae. Vivamus scelerisque tellus lacus, ut pulvinar nibh tristique eget. Fusce rhoncus risus sed tincidunt porta. Ut sit amet metus venenatis, semper nisl quis, efficitur mauris. Suspendisse ac ipsum eget ligula varius venenatis. Nam porttitor efficitur ante. Donec iaculis turpis ac metus congue, ac pharetra nisl vestibulum.
-
-In bibendum erat augue, vitae fringilla nulla scelerisque eget. Aliquam placerat quam ante, eu suscipit sem varius sit amet. Vestibulum aliquet sit amet purus eget tempor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur mattis semper ex, sit amet consectetur nunc maximus at. Donec commodo egestas convallis. Nunc porttitor est ac vestibulum consectetur. Sed sagittis purus at nulla ullamcorper dapibus. In eget diam dictum, auctor turpis a, varius erat. Vivamus risus lacus, consectetur eu dignissim nec, euismod quis lacus. Nam feugiat enim massa, id lacinia purus euismod semper. Sed dignissim mi nulla, at cursus ex commodo sit amet. Aliquam urna nisl, condimentum eget commodo ac, blandit eleifend risus. In nec elit et nunc pulvinar semper. Nulla varius eros urna. Aliquam mollis tellus dignissim leo tristique, ut sollicitudin turpis pellentesque.</p>
+              <DistributionChart />
             </div>
             <div class="data-item fill-height">
               <p class="title">Dataset preview</p>
