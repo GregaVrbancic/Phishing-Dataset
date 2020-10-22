@@ -13,7 +13,6 @@ jobs:
         shell: bash
         working-directory: web-app
     steps:
-      - name: Checkout
       - uses: actions/checkout@v2
 
       - name: Setup Node
@@ -22,8 +21,7 @@ jobs:
           node-version: '12'
 
       - name: Build
-      - run: npm i -g pnpm
-      - run: pnpm run build
+      - run: npm i -g pnpm && pnpm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
