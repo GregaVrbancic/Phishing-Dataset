@@ -12,8 +12,8 @@ dependencies:
   svelte-select: 3.12.0
 devDependencies:
   '@rollup/plugin-commonjs': 14.0.0_rollup@2.32.0
-  '@rollup/plugin-node-resolve': 8.4.0_rollup@2.32.0
-  '@sveltekit/ui': 4.0.0
+  '@rollup/plugin-node-resolve': 9.0.0_rollup@2.32.0
+  '@rollup/plugin-url': 5.0.1_rollup@2.32.0
   gh-pages: 3.1.0
   rollup: 2.32.0
   rollup-plugin-livereload: 2.0.0
@@ -156,23 +156,35 @@ packages:
       rollup: ^2.3.4
     resolution:
       integrity: sha512-+PSmD9ePwTAeU106i9FRdc+Zb3XUWyW26mo5Atr2mk82hor8+nPwkztEjFo8/B1fJKfaQDg9aM2bzQkjhi7zOw==
-  /@rollup/plugin-node-resolve/8.4.0_rollup@2.32.0:
+  /@rollup/plugin-node-resolve/9.0.0_rollup@2.32.0:
     dependencies:
       '@rollup/pluginutils': 3.1.0_rollup@2.32.0
       '@types/resolve': 1.17.1
       builtin-modules: 3.1.0
-      deep-freeze: 0.0.1
       deepmerge: 4.2.2
       is-module: 1.0.0
       resolve: 1.17.0
       rollup: 2.32.0
     dev: true
     engines:
-      node: '>= 8.0.0'
+      node: '>= 10.0.0'
     peerDependencies:
       rollup: ^1.20.0||^2.0.0
     resolution:
-      integrity: sha512-LFqKdRLn0ShtQyf6SBYO69bGE1upV6wUhBX0vFOUnLAyzx5cwp8svA0eHUnu8+YU57XOkrMtfG63QOpQx25pHQ==
+      integrity: sha512-gPz+utFHLRrd41WMP13Jq5mqqzHL3OXrfj3/MkSyB6UBIcuNt9j60GCbarzMzdf1VHFpOxfQh/ez7wyadLMqkg==
+  /@rollup/plugin-url/5.0.1_rollup@2.32.0:
+    dependencies:
+      '@rollup/pluginutils': 3.1.0_rollup@2.32.0
+      make-dir: 3.1.0
+      mime: 2.4.6
+      rollup: 2.32.0
+    dev: true
+    engines:
+      node: '>=8.0.0'
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0
+    resolution:
+      integrity: sha512-/dO8Ic+vR9VtMkHjmFBWzISjX0iDwrB3vLg8sy4A7hxu2Uk0J09kAXbtku7gJb1fqVcJUIByFG5d/4sgNh1DvA==
   /@rollup/pluginutils/3.1.0_rollup@2.32.0:
     dependencies:
       '@types/estree': 0.0.39
@@ -186,10 +198,6 @@ packages:
       rollup: ^1.20.0||^2.0.0
     resolution:
       integrity: sha512-GksZ6pr6TpIjHm8h9lSQ8pi8BE9VeubNT0OMJ3B5uZJ8pz73NPiqOtCog/x2/QzM1ENChPKxMDhiQuRHsqc+lg==
-  /@sveltekit/ui/4.0.0:
-    dev: true
-    resolution:
-      integrity: sha512-MOy2QYA7QUEdUhFBBtDrGPBzg/HCLkN6EG+v2KXce3Yzgde4ffTB3dviOJ9XT3Xp+7hiuVIO5VbGkLUFB6Cg9A==
   /@types/estree/0.0.39:
     dev: true
     resolution:
@@ -845,10 +853,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-aWS3UIVH+NPGCD1kki+DCU9Dua032iSsO43LqQpcs4R3+dVv7tX0qBGjiVHJHjplsoUM2XRO/KB92glqc68awg==
-  /deep-freeze/0.0.1:
-    dev: true
-    resolution:
-      integrity: sha1-OgsABd4YZygZ39OM0x+RF5yJPoQ=
   /deepmerge/4.2.2:
     dev: true
     engines:
@@ -1861,7 +1865,6 @@ packages:
     resolution:
       integrity: sha512-JIhqnCasI9yD+SsmkquHBxTSEuZdQX5BuQnS2Vc7puQQQ+8yiP5AY5uWhpdv4YL4VM5c6iliiYWPgJ/nJQLp7w==
   /mime/2.4.6:
-    dev: false
     engines:
       node: '>=4.0.0'
     hasBin: true
@@ -3556,8 +3559,8 @@ packages:
       integrity: sha512-AX3Zw5iPruN5ie6xGRIDgqkT+ZhnRlZMLMHAs8tg7nRruy2Nb+i5o9bwghAogtM08q1dpr2LVoS8KSTMYpWXUw==
 specifiers:
   '@rollup/plugin-commonjs': ^14.0.0
-  '@rollup/plugin-node-resolve': ^8.0.0
-  '@sveltekit/ui': ^4.0.0
+  '@rollup/plugin-node-resolve': ^9.0.0
+  '@rollup/plugin-url': ^5.0.1
   bulma: ^0.9.1
   fusioncharts: ^3.15.3
   gh-pages: ^3.1.0
