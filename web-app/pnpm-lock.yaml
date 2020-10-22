@@ -5,7 +5,6 @@ dependencies:
   papaparse: 5.3.0
   rollup-plugin-postcss: 3.1.8
   sirv-cli: 1.0.7
-  svelte: 3.29.0
   svelte-content-loader: 1.1.3
   svelte-data-grid: 3.0.0
   svelte-fusioncharts: 1.0.0
@@ -14,12 +13,13 @@ dependencies:
 devDependencies:
   '@rollup/plugin-commonjs': 14.0.0_rollup@2.32.0
   '@rollup/plugin-node-resolve': 8.4.0_rollup@2.32.0
-  '@rollup/plugin-url': 5.0.1_rollup@2.32.0
+  '@sveltekit/ui': 4.0.0
   gh-pages: 3.1.0
   rollup: 2.32.0
   rollup-plugin-livereload: 2.0.0
   rollup-plugin-svelte: 6.0.1_rollup@2.32.0+svelte@3.29.0
   rollup-plugin-terser: 7.0.2_rollup@2.32.0
+  svelte: 3.29.0
   svelte-feather-icons: 3.3.0
 lockfileVersion: 5.1
 packages:
@@ -173,19 +173,6 @@ packages:
       rollup: ^1.20.0||^2.0.0
     resolution:
       integrity: sha512-LFqKdRLn0ShtQyf6SBYO69bGE1upV6wUhBX0vFOUnLAyzx5cwp8svA0eHUnu8+YU57XOkrMtfG63QOpQx25pHQ==
-  /@rollup/plugin-url/5.0.1_rollup@2.32.0:
-    dependencies:
-      '@rollup/pluginutils': 3.1.0_rollup@2.32.0
-      make-dir: 3.1.0
-      mime: 2.4.6
-      rollup: 2.32.0
-    dev: true
-    engines:
-      node: '>=8.0.0'
-    peerDependencies:
-      rollup: ^1.20.0||^2.0.0
-    resolution:
-      integrity: sha512-/dO8Ic+vR9VtMkHjmFBWzISjX0iDwrB3vLg8sy4A7hxu2Uk0J09kAXbtku7gJb1fqVcJUIByFG5d/4sgNh1DvA==
   /@rollup/pluginutils/3.1.0_rollup@2.32.0:
     dependencies:
       '@types/estree': 0.0.39
@@ -199,6 +186,10 @@ packages:
       rollup: ^1.20.0||^2.0.0
     resolution:
       integrity: sha512-GksZ6pr6TpIjHm8h9lSQ8pi8BE9VeubNT0OMJ3B5uZJ8pz73NPiqOtCog/x2/QzM1ENChPKxMDhiQuRHsqc+lg==
+  /@sveltekit/ui/4.0.0:
+    dev: true
+    resolution:
+      integrity: sha512-MOy2QYA7QUEdUhFBBtDrGPBzg/HCLkN6EG+v2KXce3Yzgde4ffTB3dviOJ9XT3Xp+7hiuVIO5VbGkLUFB6Cg9A==
   /@types/estree/0.0.39:
     dev: true
     resolution:
@@ -1870,6 +1861,7 @@ packages:
     resolution:
       integrity: sha512-JIhqnCasI9yD+SsmkquHBxTSEuZdQX5BuQnS2Vc7puQQQ+8yiP5AY5uWhpdv4YL4VM5c6iliiYWPgJ/nJQLp7w==
   /mime/2.4.6:
+    dev: false
     engines:
       node: '>=4.0.0'
     hasBin: true
@@ -3325,7 +3317,7 @@ packages:
     resolution:
       integrity: sha512-M57BG2nUedYP8c25geuYE7gOT2RZfLMaMFKJ6kEASouyMcmwRUr7rEbSWQa+q0c46r7EVnVRjb2GvohD+Gbirw==
   /svelte/3.29.0:
-    dev: false
+    dev: true
     engines:
       node: '>= 8'
     resolution:
@@ -3565,7 +3557,7 @@ packages:
 specifiers:
   '@rollup/plugin-commonjs': ^14.0.0
   '@rollup/plugin-node-resolve': ^8.0.0
-  '@rollup/plugin-url': ^5.0.1
+  '@sveltekit/ui': ^4.0.0
   bulma: ^0.9.1
   fusioncharts: ^3.15.3
   gh-pages: ^3.1.0
