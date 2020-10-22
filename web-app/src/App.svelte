@@ -1,29 +1,43 @@
 <script>
+  import NavBar from './NavBar.svelte'
+  import DatasetContent from './DatasetContent.svelte'
 </script>
 
-<main>
-	<h1>Phishing Datasets Web App</h1>
-	<p>Under the development!</p>
-</main>
+<style type="text/scss" global>
+  @import 'bulma/bulma';
 
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
+  $primary: #ff3e00;
+  $secondary: #af2d02;
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
+  :global(a),
+  :global(a:visited) {
+    color: $primary;
+    &:hover {
+      text-decoration: none;
+      color: $secondary;
+    }
+  }
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+  :global(.full-height) {
+    height: 100%;
+  }
 </style>
+
+<main>
+
+  <NavBar />
+  <DatasetContent />
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Phishing Dataset Web App</strong>
+        by
+        <a href="https://grega.xyz">Grega Vrbančič</a>
+        . The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>
+        .
+      </p>
+    </div>
+  </footer>
+</main>
