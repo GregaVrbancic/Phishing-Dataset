@@ -1,5 +1,5 @@
 <script>
-  import { onMount, beforeUpdate, afterUpdate } from 'svelte';
+  import { onMount, beforeUpdate, afterUpdate } from 'svelte'
   import FusionCharts from 'fusioncharts'
   import Charts from 'fusioncharts/fusioncharts.charts'
   import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion'
@@ -10,29 +10,23 @@
   export let data
 
   $: dataSource = {
-      chart: {
-        subCaption:
-          'Distribution between phishing and legitimate websites instances',
-        showValues: '0',
-        showPercentInTooltip: '0',
-        numberPrefix: '',
-        enableMultiSlicing: '1',
-        theme: 'fusion',
-      },
-      data: data,
-    }
+    chart: {
+      subCaption:
+        'Distribution between phishing and legitimate websites instances',
+      showValues: '0',
+      showPercentInTooltip: '0',
+      numberPrefix: '',
+      enableMultiSlicing: '1',
+      theme: 'fusion',
+    },
+    data: data,
+  }
 
   $: chartConfig = {
-      type: 'pie3d',
-      renderAt: 'chart-container',
-      dataSource,
-    }
-
-  afterUpdate(async () => {
-
-    console.log(data)
-    console.log(dataSource)
-  });
+    type: 'pie3d',
+    renderAt: 'chart-container',
+    dataSource,
+  }
 </script>
 
 <style type="text/scss">

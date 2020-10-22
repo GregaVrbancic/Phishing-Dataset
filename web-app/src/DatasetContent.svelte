@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from 'svelte';
+  import { onMount } from 'svelte'
   import { FacebookLoader, ListLoader } from 'svelte-content-loader'
   import Select from 'svelte-select'
   import Papa from 'papaparse'
@@ -27,7 +27,7 @@
       label: 'Legitimate',
       value: selectedLegitimate,
     },
-  ];
+  ]
 
   onMount(async () => {
     console.log('onMount')
@@ -185,7 +185,7 @@
           {:else}
             <div class="data-item">
               <p class="title">Dataset distribution</p>
-              <DistributionChart bind:data="{distributionChartData}" />
+              <DistributionChart bind:data={distributionChartData} />
             </div>
             <div class="data-item fill-height">
               <p class="title">Dataset preview</p>
