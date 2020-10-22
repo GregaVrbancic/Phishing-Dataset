@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from 'svelte'
+  import { onMount } from 'svelte';
   import { FacebookLoader, ListLoader } from 'svelte-content-loader'
   import Select from 'svelte-select'
   import Papa from 'papaparse'
@@ -18,6 +18,16 @@
   let selectedFeatures = []
   let selectedPhishing = 0
   let selectedLegitimate = 0
+  $: distributionChartData = [
+    {
+      label: 'Phishing',
+      value: selectedPhishing,
+    },
+    {
+      label: 'Legitimate',
+      value: selectedLegitimate,
+    },
+  ];
 
   onMount(async () => {
     console.log('onMount')
@@ -38,22 +48,16 @@
   })
 
   const onStep = (results, parser) => {
-    // console.log(results.data)
-    //console.log(parser)
     let row = results.data
-    //row['id'] = rowId
 
     if (rowId == 1) {
       // prepare and store features list
-      features = Object.keys(row) //csv.meta['fields']
+      features = Object.keys(row)
       columns = features.map((feature) => ({
         display: feature,
         dataName: feature,
         width: 100,
       }))
-
-      console.log(features)
-      console.log(columns)
     }
 
     if (row['phishing'] == 1) {
@@ -71,18 +75,6 @@
     console.log('Parsing complete')
     selectedPhishing = countPhishing
     selectedLegitimate = countLegitimate
-
-    //console.log(csv);
-    //console.log(rows);
-
-    // prepare and store features list
-    /*features = csv.meta['fields']
-        columns = features.map((feature) => ({
-          display: feature,
-          dataName: feature,
-          width: 100,
-        }))*/
-    //console.log(columns);
 
     isLoading = false
   }
@@ -126,7 +118,7 @@
     border-left: 1px ridge $border;
 
     .data-item {
-        margin-bottom: 3rem;
+      margin-bottom: 3rem;
     }
 
     .fill-height {
@@ -165,7 +157,7 @@
                 type="range"
                 bind:value={selectedPhishing}
                 min="0"
-                max="10" />
+                max={countPhishing} />
               {selectedPhishing}/{countPhishing}
               <label for="selectLegitimate">
                 Select nr. of phishing instances:
@@ -175,7 +167,7 @@
                 type="range"
                 bind:value={selectedLegitimate}
                 min="0"
-                max="10" />
+                max={countLegitimate} />
               {selectedLegitimate}/{countLegitimate}
               <label for="selectFeatures">Select features:</label>
               <Select
@@ -193,7 +185,7 @@
           {:else}
             <div class="data-item">
               <p class="title">Dataset distribution</p>
-              <DistributionChart />
+              <DistributionChart bind:data="{distributionChartData}" />
             </div>
             <div class="data-item fill-height">
               <p class="title">Dataset preview</p>

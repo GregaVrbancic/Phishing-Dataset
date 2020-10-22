@@ -1,4 +1,5 @@
 <script>
+  import { onMount, beforeUpdate, afterUpdate } from 'svelte';
   import FusionCharts from 'fusioncharts'
   import Charts from 'fusioncharts/fusioncharts.charts'
   import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion'
@@ -6,31 +7,32 @@
 
   fcRoot(FusionCharts, Charts, FusionTheme)
 
-  let dataSource = {
+  export let data
+
+  $: dataSource = {
       chart: {
-        subCaption: 'Distribution between phishing and legitimate websites instances',
+        subCaption:
+          'Distribution between phishing and legitimate websites instances',
         showValues: '0',
         showPercentInTooltip: '0',
         numberPrefix: '',
         enableMultiSlicing: '1',
         theme: 'fusion',
       },
-      data: [
-        {
-          label: 'Phishing',
-          value: '30647',
-        },
-        {
-          label: 'Legitimate',
-          value: '58001',
-        },,
-      ],
-    },
-    chartConfig = {
+      data: data,
+    }
+
+  $: chartConfig = {
       type: 'pie3d',
       renderAt: 'chart-container',
       dataSource,
     }
+
+  afterUpdate(async () => {
+
+    console.log(data)
+    console.log(dataSource)
+  });
 </script>
 
 <style type="text/scss">
