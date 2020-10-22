@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte'
-  import { FacebookLoader, ListLoader } from 'svelte-content-loader'
+  import { InstagramLoader, ListLoader } from 'svelte-content-loader'
   import Select from 'svelte-select'
   import Papa from 'papaparse'
   import DataGrid from 'svelte-data-grid'
@@ -119,6 +119,7 @@
 
     .data-item {
       margin-bottom: 3rem;
+      text-align: center;
     }
 
     .fill-height {
@@ -143,11 +144,11 @@
     <div class="column is-four-fifths main">
       <div class="columns full-height">
         <div class="column is-one-quarter">
-          {#if isLoading}
-            <ListLoader uniqueKey="propertiesLoader" />
-          {:else}
-            <div class="configuration-item">
-              <p class="title">Configure own dataset variation</p>
+          <div class="configuration-item">
+            <p class="title">Configure own dataset variation</p>
+            {#if isLoading}
+              <ListLoader uniqueKey="propertiesLoader" />
+            {:else}
               <p class="subtitle">Select the dataset ratio and features.</p>
               <label for="selectPhishing">
                 Select nr. of phishing instances:
@@ -176,59 +177,80 @@
                 isMulti={true}
                 on:select={handleSelect}
                 on:clear={handleClear} />
-            </div>
-          {/if}
+            {/if}
+          </div>
         </div>
         <div class="column dataview">
-          {#if isLoading}
-            <FacebookLoader uniqueKey="tableLoader" />
-          {:else}
-            <div class="data-item">
-              <p class="title">Dataset distribution</p>
+          <div class="data-item">
+            <p class="title">Dataset distribution</p>
+            {#if isLoading}
+              <InstagramLoader uniqueKey="distributionLoader" />
+            {:else}
               <DistributionChart bind:data={distributionChartData} />
-            </div>
-            <div class="data-item fill-height">
-              <p class="title">Dataset preview</p>
+            {/if}
+          </div>
+          <div class="data-item fill-height">
+            <p class="title">Dataset preview</p>
+            {#if isLoading}
+              <ListLoader uniqueKey="tableLoader" />
+            {:else}
               <DataGrid
                 {rows}
                 allowColumnReordering={false}
                 {columns}
                 height="100%" />
-            </div>
-          {/if}
+            {/if}
+          </div>
         </div>
       </div>
     </div>
     <div class="column">
-      {#if isLoading}
-        <ListLoader uniqueKey="downloadLoader" />
-      {:else}
-        <div class="download-item">
-          <p class="title">Download custom dataset</p>
+      <div class="download-item">
+        <p class="title">Download custom dataset</p>
+        {#if isLoading}
+          <ListLoader uniqueKey="downloadLoader" />
+        {:else}
           <p class="subtitle">Download your custom dataset variation.</p>
-        </div>
-        <div class="download-item">
-          <p class="title">Download dataset</p>
-          <p class="subtitle">
-            Download full dataset variations from Mendeley Data.
-          </p>
-          <div>
-            <strong>Version 1</strong>
-            <p>
-              Published:
-              <strong>24-09-2020</strong>
-            </p>
-            <p>
-              DOI:
-              <strong>
-                <a href="http://dx.doi.org/10.17632/72ptz43s9v.1">
-                  10.17632/72ptz43s9v.1
-                </a>
-              </strong>
-            </p>
+          <div style="text-align:center;">
+            <a class="button is-success">Download</a>
           </div>
+        {/if}
+      </div>
+      <div class="download-item">
+        <p class="title">Download dataset</p>
+        <p class="subtitle">
+          Download full dataset variations from Mendeley Data.
+        </p>
+        <div>
+          <strong>Version 1</strong>
+          <ul>
+            <li>
+              <a
+                href="https://data.mendeley.com/public-files/datasets/72ptz43s9v/files/26197eb8-15bc-4e06-a269-aa10ddc286f0/file_downloaded">
+                <strong>dataset_full</strong>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://data.mendeley.com/public-files/datasets/72ptz43s9v/files/154607af-0e5d-487d-87e4-c5070b2eb544/file_downloaded">
+                <strong>dataset_small</strong>
+              </a>
+            </li>
+          </ul>
+          <p>
+            Published:
+            <strong>24-09-2020</strong>
+          </p>
+          <p>
+            DOI:
+            <strong>
+              <a href="http://dx.doi.org/10.17632/72ptz43s9v.1">
+                10.17632/72ptz43s9v.1
+              </a>
+            </strong>
+          </p>
         </div>
-      {/if}
+      </div>
     </div>
   </div>
 </section>
