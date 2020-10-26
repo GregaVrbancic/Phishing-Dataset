@@ -81,8 +81,6 @@
     selectedPhishing = countPhishing
     selectedLegitimate = countLegitimate
 
-    console.log(columns)
-    console.log(selectedColumns)
     isLoading = false
   }
 
@@ -117,10 +115,31 @@
     let filename = 'phishing-dataset-variation.csv'
     let selectedFeaturesArr = selectedFeatures.map(f => f.label)
 
-    let csv = Papa.unparse({ data: rows, fields: selectedFeaturesArr })
+    // filter rows to match dataset ratio
+    let data = []
+    var addedPhishing = 0
+    var addedLegitimate = 0
+
+    if (!selectedFeaturesArr.includes('phishing')) {
+      console.log('The "phishing" attribute is required!')
+      return
+    }
+
+    rows.map((row) => {
+      if (row['phishing'] == 0 && addedLegitimate < selectedLegitimate) {
+        data.push(row)
+        addedLegitimate++
+      } else if (row['phishing'] == 1 && addedPhishing < selectedPhishing) {
+        data.push(row)
+        addedPhishing++
+      }
+    })
+
+    let csv = Papa.unparse({ data: data, fields: selectedFeaturesArr })
 
     if(csv == null) {
       console.log('Ups... something went wrong :\'( Please try again later.')
+      return
     }
 
     var blob = new Blob([csv])
