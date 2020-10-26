@@ -12,6 +12,7 @@
   let features = []
   let rows = []
   let columns = []
+  let selectedColumns = []
   let rowId = 1
   let countPhishing = 0
   let countLegitimate = 0
@@ -58,17 +59,21 @@
         dataName: feature,
         width: 100,
       }))
+      selectedColumns = columns
     }
 
     if (row['phishing'] == 1) {
       countPhishing++
-    } else {
+    }
+
+    if (row['phishing'] == 0) {
       countLegitimate++
     }
 
-    rows.push(row)
-
-    rowId++
+    if (Object.keys(row).length === 112) {
+      rows.push(row)
+      rowId++
+    }
   }
 
   const onComplete = (results, file) => {
@@ -76,17 +81,34 @@
     selectedPhishing = countPhishing
     selectedLegitimate = countLegitimate
 
+    console.log(columns)
+    console.log(selectedColumns)
     isLoading = false
   }
 
   const handleSelect = (selectedVal) => {
     selectedFeatures = selectedVal.detail
     console.log(selectedFeatures)
+
+    if (selectedFeatures) {
+      let selectedFeaturesArr = selectedFeatures.map(f => f.label)
+    console.log(selectedFeaturesArr)
+
+    selectedColumns = columns.filter(col => {
+      if (selectedFeaturesArr.includes(col.dataName)) {
+        return true
+      } else {
+        return false
+      }
+    })
+
+    console.log(selectedColumns)
+    }
   }
 
   const handleClear = () => {
     selectedFeatures = []
-    console.log(selectedFeatures)
+    selectedColumns = columns
   }
 </script>
 
@@ -195,9 +217,9 @@
               <ListLoader uniqueKey="tableLoader" />
             {:else}
               <DataGrid
-                {rows}
+                bind:rows={rows}
+                bind:columns={selectedColumns}
                 allowColumnReordering={false}
-                {columns}
                 height="100%" />
             {/if}
           </div>
