@@ -110,6 +110,31 @@
     selectedFeatures = []
     selectedColumns = columns
   }
+
+  const downloadDataset = () => {
+    console.log("Download dataset")
+
+    let filename = 'phishing-dataset-variation.csv'
+    let selectedFeaturesArr = selectedFeatures.map(f => f.label)
+
+    let csv = Papa.unparse({ data: rows, fields: selectedFeaturesArr })
+
+    if(csv == null) {
+      console.log('Ups... something went wrong :\'( Please try again later.')
+    }
+
+    var blob = new Blob([csv])
+    if (window.navigator.msSaveOrOpenBlob) { // IE hack; see http://msdn.microsoft.com/en-us/library/ie/hh779016.aspx
+      window.navigator.msSaveBlob(blob, filename)
+    } else {
+      var a = window.document.createElement("a");
+      a.href = window.URL.createObjectURL(blob, {type: "text/plain"});
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();  // IE: "Access is denied"; see: https://connect.microsoft.com/IE/feedback/details/797361/ie-10-treats-blob-url-as-cross-origin-and-denies-access
+      document.body.removeChild(a);
+    }
+  }
 </script>
 
 <style type="text/scss">
@@ -234,7 +259,7 @@
         {:else}
           <p class="subtitle">Download your custom dataset variation.</p>
           <div style="text-align:center;">
-            <a class="button is-success">Download</a>
+            <a class="button is-success" on:click="{downloadDataset}">Download</a>
           </div>
         {/if}
       </div>
