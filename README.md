@@ -134,3 +134,8 @@ In this repository the two variants of the phishing dataset are presented.
 | domain_google_index        | check if domain is indexed on Google               |
 | url_shortened              | check if URL is shortened                          |
 | phishing                   | is phishing website                                |
+
+## Cite this dataset
+
+G. Vrbančič, I. Jr. Fister, V. Podgorelec. Datasets for Phishing Websites Detection. Data in Brief, 2020, DOI: [10.1016/j.dib.2020.106438](http://dx.doi.org/10.1016/j.dib.2020.106438)
+
