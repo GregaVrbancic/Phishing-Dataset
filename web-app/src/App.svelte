@@ -1,4 +1,6 @@
 <script>
+  import Modal from 'svelte-simple-modal';
+
   import NavBar from './NavBar.svelte'
   import DatasetContent from './DatasetContent.svelte'
 </script>
@@ -26,7 +28,10 @@
 <main>
 
   <NavBar />
-  <DatasetContent />
+
+  <Modal>
+    <DatasetContent />
+  </Modal>
 
   <footer class="footer">
     <div class="content has-text-centered">

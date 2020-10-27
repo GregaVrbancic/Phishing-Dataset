@@ -10,6 +10,7 @@ dependencies:
   svelte-fusioncharts: 1.0.0
   svelte-preprocess: 4.5.1_node-sass@4.14.1+svelte@3.29.0
   svelte-select: 3.12.0
+  svelte-simple-modal: 0.6.1_svelte@3.29.0
 devDependencies:
   '@rollup/plugin-commonjs': 14.0.0_rollup@2.32.0
   '@rollup/plugin-node-resolve': 9.0.0_rollup@2.32.0
@@ -21,7 +22,7 @@ devDependencies:
   rollup-plugin-terser: 7.0.2_rollup@2.32.0
   svelte: 3.29.0
   svelte-feather-icons: 3.3.0
-lockfileVersion: 5.1
+lockfileVersion: 5.2
 packages:
   /@babel/code-frame/7.10.4:
     dependencies:
@@ -3319,6 +3320,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-M57BG2nUedYP8c25geuYE7gOT2RZfLMaMFKJ6kEASouyMcmwRUr7rEbSWQa+q0c46r7EVnVRjb2GvohD+Gbirw==
+  /svelte-simple-modal/0.6.1_svelte@3.29.0:
+    dependencies:
+      svelte: 3.29.0
+    dev: false
+    peerDependencies:
+      svelte: ^3.18.2
+    resolution:
+      integrity: sha512-GJGYj+jymzuar105fwkZ73dtcSFCordpbHqt53iE1N1GdqhvEmSs24idRzyIcO7TrTD/V/287X1icFXp88RQHQ==
   /svelte/3.29.0:
     dev: true
     engines:
@@ -3579,3 +3588,4 @@ specifiers:
   svelte-fusioncharts: ^1.0.0
   svelte-preprocess: ^4.5.1
   svelte-select: ^3.12.0
+  svelte-simple-modal: ^0.6.1
