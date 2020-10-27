@@ -1,16 +1,21 @@
 <script>
-  import { onMount } from 'svelte'
+  import { onMount, getContext } from 'svelte'
   import { InstagramLoader, ListLoader } from 'svelte-content-loader'
+  import { InfoIcon } from 'svelte-feather-icons'
   import Select from 'svelte-select'
   import Papa from 'papaparse'
   import DataGrid from 'svelte-data-grid'
 
+  import Message from './Message.svelte'
+  import AttribuesInfo from './AttributesInfo.svelte'
   import DistributionChart from './DistributionChart.svelte'
 
   let isLoading = true
+  let isDownloading = false
 
   let features = []
   let rows = []
+  let rowsPreview = []
   let columns = []
   let selectedColumns = []
   let rowId = 1
@@ -80,6 +85,7 @@
     console.log('Parsing complete')
     selectedPhishing = countPhishing
     selectedLegitimate = countLegitimate
+    rowsPreview = rows // rows.slice(0, 30)
 
     isLoading = false
   }
@@ -89,18 +95,18 @@
     console.log(selectedFeatures)
 
     if (selectedFeatures) {
-      let selectedFeaturesArr = selectedFeatures.map(f => f.label)
-    console.log(selectedFeaturesArr)
+      let selectedFeaturesArr = selectedFeatures.map((f) => f.label)
+      console.log(selectedFeaturesArr)
 
-    selectedColumns = columns.filter(col => {
-      if (selectedFeaturesArr.includes(col.dataName)) {
-        return true
-      } else {
-        return false
-      }
-    })
+      selectedColumns = columns.filter((col) => {
+        if (selectedFeaturesArr.includes(col.dataName)) {
+          return true
+        } else {
+          return false
+        }
+      })
 
-    console.log(selectedColumns)
+      console.log(selectedColumns)
     }
   }
 
@@ -109,11 +115,25 @@
     selectedColumns = columns
   }
 
-  const downloadDataset = () => {
-    console.log("Download dataset")
+  const { open } = getContext('simple-modal')
 
+  const showAttributesInfo = () => {
+    console.log('Show attributes info..')
+    open(AttribuesInfo, {})
+  }
+
+  const downloadDataset = async () => {
+    console.log('Download dataset')
+    isDownloading = true
     let filename = 'phishing-dataset-variation.csv'
-    let selectedFeaturesArr = selectedFeatures.map(f => f.label)
+
+    let selectedFeaturesArr = []
+
+    if (selectedFeatures.length == 0) {
+      selectedFeaturesArr = selectedColumns.map((f) => f.dataName)
+    } else {
+      selectedFeaturesArr = selectedFeatures.map((f) => f.label)
+    }
 
     // filter rows to match dataset ratio
     let data = []
@@ -122,6 +142,7 @@
 
     if (!selectedFeaturesArr.includes('phishing')) {
       console.log('The "phishing" attribute is required!')
+      open(Message, { message: 'The "phishing" attribute is required!' })
       return
     }
 
@@ -137,22 +158,27 @@
 
     let csv = Papa.unparse({ data: data, fields: selectedFeaturesArr })
 
-    if(csv == null) {
-      console.log('Ups... something went wrong :\'( Please try again later.')
+    if (csv == null) {
+      console.log("Ups... something went wrong :'( Please try again later.")
+      open(Message, { message: 'Ups... something went wrong :\'( Please try again later.' })
       return
     }
 
     var blob = new Blob([csv])
-    if (window.navigator.msSaveOrOpenBlob) { // IE hack; see http://msdn.microsoft.com/en-us/library/ie/hh779016.aspx
+    if (window.navigator.msSaveOrOpenBlob) {
+      console.log('Save blob')
+      // IE hack; see http://msdn.microsoft.com/en-us/library/ie/hh779016.aspx
       window.navigator.msSaveBlob(blob, filename)
     } else {
-      var a = window.document.createElement("a");
-      a.href = window.URL.createObjectURL(blob, {type: "text/plain"});
-      a.download = filename;
-      document.body.appendChild(a);
-      a.click();  // IE: "Access is denied"; see: https://connect.microsoft.com/IE/feedback/details/797361/ie-10-treats-blob-url-as-cross-origin-and-denies-access
-      document.body.removeChild(a);
+      console.log('Open download link')
+      var a = window.document.createElement('a')
+      a.href = window.URL.createObjectURL(blob, { type: 'text/plain' })
+      a.download = filename
+      document.body.appendChild(a)
+      a.click() // IE: "Access is denied"; see: https://connect.microsoft.com/IE/feedback/details/797361/ie-10-treats-blob-url-as-cross-origin-and-denies-access
+      document.body.removeChild(a)
     }
+    isDownloading = false
   }
 </script>
 
@@ -236,7 +262,12 @@
                 min="0"
                 max={countLegitimate} />
               {selectedLegitimate}/{countLegitimate}
-              <label for="selectFeatures">Select features:</label>
+              <label for="selectFeatures">
+                Select features:
+                <a href="#" on:click={showAttributesInfo}>
+                  <InfoIcon size="1.5x" />
+                </a>
+              </label>
               <Select
                 id="selectFeatures"
                 items={features}
@@ -261,7 +292,7 @@
               <ListLoader uniqueKey="tableLoader" />
             {:else}
               <DataGrid
-                bind:rows={rows}
+                bind:rows={rowsPreview}
                 bind:columns={selectedColumns}
                 allowColumnReordering={false}
                 height="100%" />
@@ -278,7 +309,9 @@
         {:else}
           <p class="subtitle">Download your custom dataset variation.</p>
           <div style="text-align:center;">
-            <a class="button is-success" on:click="{downloadDataset}">Download</a>
+            <a class="{isDownloading ? 'button is-success is-loading' : 'button is-success'}" href="#" on:click={downloadDataset}>
+              Download
+            </a>
           </div>
         {/if}
       </div>
