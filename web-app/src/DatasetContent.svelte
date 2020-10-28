@@ -226,7 +226,7 @@
     font-size: 0.8rem;
   }
 
-  .download-item:nth-child(odd) {
+  .download-item:not(:last-child) {
     border-bottom: 1px ridge $border;
   }
 </style>
@@ -312,6 +312,7 @@
             <a class="{isDownloading ? 'button is-success is-loading' : 'button is-success'}" href="#" on:click={downloadDataset}>
               Download
             </a>
+            <p>It may take a while to prepare and dowload the csv file. So please be patient</p>
           </div>
         {/if}
       </div>
@@ -347,6 +348,31 @@
                 10.17632/72ptz43s9v.1
               </a>
             </strong>
+          </p>
+        </div>
+      </div>
+      <div class="download-item">
+        <p class="title">Cite us</p>
+        <p class="subtitle">If you find this dataset useful please recognize our work.</p>
+        <div>
+          <strong>Paper</strong>
+          <p>
+            Title:
+            <strong>Datasets for Phishing Websites Detection</strong>
+          </p>
+          <p>
+            Authors:
+            <strong>G. Vrbančič, I. Jr. Fister, V. Podgorelec</strong>
+          </p>
+          <p>
+            Journal:
+            <strong>Data in Brief</strong>
+          </p>
+          <p>
+            DOI:
+            <strong><a href="http://dx.doi.org/10.1016/j.dib.2020.106438">
+              10.1016/j.dib.2020.106438
+            </a></strong>
           </p>
         </div>
       </div>
