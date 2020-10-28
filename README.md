@@ -2,7 +2,11 @@
 
 In this repository the two variants of the phishing dataset are presented.
 
-## dataset_full - dataset_full.csv
+## Web application
+
+To preview the dataset interactively and/or tailor it to your needs, please visit a dedicated [web application](https://gregavrbancic.github.io/Phishing-Dataset/).
+
+## dataset_full.csv
 
 **Short description of the full variant dataset:**
 - Total number of instances: 88,647
@@ -10,7 +14,7 @@ In this repository the two variants of the phishing dataset are presented.
     - Number of phishing website instances (labeled as 1): 30,647
 - Total number of features: 111 (without target)
 
-## dataset_small - dataset_small.csv
+## dataset_small.csv
 
 **Short description of the small variant dataset:**
 - Total number of instances: 58,645
