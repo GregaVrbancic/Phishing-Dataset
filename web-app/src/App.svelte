@@ -3,6 +3,8 @@
 
   import NavBar from './NavBar.svelte'
   import DatasetContent from './DatasetContent.svelte'
+
+  let version = '1.0.0'
 </script>
 
 <style type="text/scss" global>
@@ -36,7 +38,7 @@
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        <strong>Phishing Dataset Web App</strong>
+        <strong>Phishing Dataset Web App v{version}</strong>
         by
         <a href="https://grega.xyz">Grega Vrbančič</a>
         . The source code is licensed
