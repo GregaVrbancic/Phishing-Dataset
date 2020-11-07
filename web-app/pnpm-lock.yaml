@@ -13,7 +13,7 @@ dependencies:
   svelte-simple-modal: 0.6.1_svelte@3.29.0
 devDependencies:
   '@rollup/plugin-commonjs': 16.0.0_rollup@2.32.0
-  '@rollup/plugin-node-resolve': 9.0.0_rollup@2.32.0
+  '@rollup/plugin-node-resolve': 10.0.0_rollup@2.32.0
   '@rollup/plugin-url': 5.0.1_rollup@2.32.0
   gh-pages: 3.1.0
   rollup: 2.32.0
@@ -157,7 +157,7 @@ packages:
       rollup: ^2.30.0
     resolution:
       integrity: sha512-LuNyypCP3msCGVQJ7ki8PqYdpjfEkE/xtFa5DqlF+7IBD0JsfMZ87C58heSwIMint58sAUZbt3ITqOmdQv/dXw==
-  /@rollup/plugin-node-resolve/9.0.0_rollup@2.32.0:
+  /@rollup/plugin-node-resolve/10.0.0_rollup@2.32.0:
     dependencies:
       '@rollup/pluginutils': 3.1.0_rollup@2.32.0
       '@types/resolve': 1.17.1
@@ -172,7 +172,7 @@ packages:
     peerDependencies:
       rollup: ^1.20.0||^2.0.0
     resolution:
-      integrity: sha512-gPz+utFHLRrd41WMP13Jq5mqqzHL3OXrfj3/MkSyB6UBIcuNt9j60GCbarzMzdf1VHFpOxfQh/ez7wyadLMqkg==
+      integrity: sha512-sNijGta8fqzwA1VwUEtTvWCx2E7qC70NMsDh4ZG13byAXYigBNZMxALhKUSycBks5gupJdq0lFrKumFrRZ8H3A==
   /@rollup/plugin-url/5.0.1_rollup@2.32.0:
     dependencies:
       '@rollup/pluginutils': 3.1.0_rollup@2.32.0
@@ -3593,7 +3593,7 @@ packages:
       integrity: sha512-AX3Zw5iPruN5ie6xGRIDgqkT+ZhnRlZMLMHAs8tg7nRruy2Nb+i5o9bwghAogtM08q1dpr2LVoS8KSTMYpWXUw==
 specifiers:
   '@rollup/plugin-commonjs': ^16.0.0
-  '@rollup/plugin-node-resolve': ^9.0.0
+  '@rollup/plugin-node-resolve': ^10.0.0
   '@rollup/plugin-url': ^5.0.1
   bulma: ^0.9.1
   fusioncharts: ^3.15.3
