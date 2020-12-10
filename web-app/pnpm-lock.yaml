@@ -12,13 +12,13 @@ dependencies:
   svelte-select: 3.12.0
   svelte-simple-modal: 0.6.1_svelte@3.29.0
 devDependencies:
-  '@rollup/plugin-commonjs': 16.0.0_rollup@2.32.0
+  '@rollup/plugin-commonjs': 17.0.0_rollup@2.32.0
   '@rollup/plugin-node-resolve': 11.0.0_rollup@2.32.0
   '@rollup/plugin-url': 5.0.1_rollup@2.32.0
   gh-pages: 3.1.0
   rollup: 2.32.0
   rollup-plugin-livereload: 2.0.0
-  rollup-plugin-svelte: 6.0.1_rollup@2.32.0+svelte@3.29.0
+  rollup-plugin-svelte: 7.0.0_rollup@2.32.0+svelte@3.29.0
   rollup-plugin-terser: 7.0.2_rollup@2.32.0
   svelte: 3.29.0
   svelte-feather-icons: 3.3.0
@@ -140,7 +140,7 @@ packages:
     dev: false
     resolution:
       integrity: sha512-3NsZsJIA/22P3QUyrEDNA2D133H4j224twJrdipXN38dpnIOzAbUDtOwkcJ5pXmn75w7LSQDjA4tO9dm1XlqlA==
-  /@rollup/plugin-commonjs/16.0.0_rollup@2.32.0:
+  /@rollup/plugin-commonjs/17.0.0_rollup@2.32.0:
     dependencies:
       '@rollup/pluginutils': 3.1.0_rollup@2.32.0
       commondir: 1.0.1
@@ -148,7 +148,7 @@ packages:
       glob: 7.1.6
       is-reference: 1.2.1
       magic-string: 0.25.7
-      resolve: 1.17.0
+      resolve: 1.19.0
       rollup: 2.32.0
     dev: true
     engines:
@@ -156,7 +156,7 @@ packages:
     peerDependencies:
       rollup: ^2.30.0
     resolution:
-      integrity: sha512-LuNyypCP3msCGVQJ7ki8PqYdpjfEkE/xtFa5DqlF+7IBD0JsfMZ87C58heSwIMint58sAUZbt3ITqOmdQv/dXw==
+      integrity: sha512-/omBIJG1nHQc+bgkYDuLpb/V08QyutP9amOrJRUSlYJZP+b/68gM//D8sxJe3Yry2QnYIr3QjR3x4AlxJEN3GA==
   /@rollup/plugin-node-resolve/11.0.0_rollup@2.32.0:
     dependencies:
       '@rollup/pluginutils': 3.1.0_rollup@2.32.0
@@ -2802,6 +2802,7 @@ packages:
   /resolve/1.17.0:
     dependencies:
       path-parse: 1.0.6
+    dev: false
     resolution:
       integrity: sha512-ic+7JYiV8Vi2yzQGFWOkiZD5Z9z7O2Zhm9XMaTxdJExKasieFCr+yXZ/WmXsckHiKl12ar0y6XiXDx3m4RHn1w==
   /resolve/1.19.0:
@@ -2855,19 +2856,20 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-JHnGfW8quNc6ePxEkZ05HEZ1YiRxDgY9RKEetMfsrwxR2kh/d90OVScTc6b1c2Q17Cs/5TRYL+1uddG21lQe3w==
-  /rollup-plugin-svelte/6.0.1_rollup@2.32.0+svelte@3.29.0:
+  /rollup-plugin-svelte/7.0.0_rollup@2.32.0+svelte@3.29.0:
     dependencies:
       require-relative: 0.8.7
       rollup: 2.32.0
       rollup-pluginutils: 2.8.2
-      sourcemap-codec: 1.4.8
       svelte: 3.29.0
     dev: true
+    engines:
+      node: '>=10'
     peerDependencies:
-      rollup: '>=1.19.2'
-      svelte: '*'
+      rollup: '>=2.0.0'
+      svelte: '>=3.5.0'
     resolution:
-      integrity: sha512-kS9/JZMBNgpKTqVKlwV8mhmGwxu8NiNf6+n5ZzdZ8yDp3+ADqjf8Au+JNEpoOn6kLlh1hLS2Gsa76k9RP57HDQ==
+      integrity: sha512-cw4yv/5v1NQV3nPbpOJtikgkB+9mfSJaqKUdq7x5fVQJnwLtcdc2JOszBs5pBY+SemTs5pmJbdEMseEavbUtjQ==
   /rollup-plugin-terser/7.0.2_rollup@2.32.0:
     dependencies:
       '@babel/code-frame': 7.10.4
@@ -3603,7 +3605,7 @@ packages:
     resolution:
       integrity: sha512-AX3Zw5iPruN5ie6xGRIDgqkT+ZhnRlZMLMHAs8tg7nRruy2Nb+i5o9bwghAogtM08q1dpr2LVoS8KSTMYpWXUw==
 specifiers:
-  '@rollup/plugin-commonjs': ^16.0.0
+  '@rollup/plugin-commonjs': ^17.0.0
   '@rollup/plugin-node-resolve': ^11.0.0
   '@rollup/plugin-url': ^5.0.1
   bulma: ^0.9.1
@@ -3614,7 +3616,7 @@ specifiers:
   rollup: ^2.3.4
   rollup-plugin-livereload: ^2.0.0
   rollup-plugin-postcss: ^3.1.8
-  rollup-plugin-svelte: ^6.0.0
+  rollup-plugin-svelte: ^7.0.0
   rollup-plugin-terser: ^7.0.0
   sirv-cli: ^1.0.0
   svelte: ^3.0.0
