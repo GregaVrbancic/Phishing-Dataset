@@ -25,7 +25,7 @@
   "dependencies": {
     "bulma": "^0.9.1",
     "fusioncharts": "^3.15.3",
-    "node-sass": "^5.0.0",
+    "node-sass": "^6.0.0",
     "papaparse": "^5.3.0",
     "rollup-plugin-postcss": "^3.1.8",
     "sirv-cli": "^1.0.0",
