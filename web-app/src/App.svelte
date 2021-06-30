@@ -4,7 +4,7 @@
   import NavBar from './NavBar.svelte'
   import DatasetContent from './DatasetContent.svelte'
 
-  let version = '1.0.0'
+  let version = '1.0.1'
 </script>
 
 <style type="text/scss" global>

@@ -1,6 +1,6 @@
 {
   "name": "phishing-datasets-web-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://gregavrbancic.github.io/Phishing-Dataset",
   "baseUrl": "Phishing-Dataset",
   "scripts": {
