@@ -1,5 +1,4 @@
-//import preprocess from 'svelte-preprocess';
-//import postcss from 'rollup-plugin-postcss'
+import preprocess from 'svelte-preprocess';
 import svelte from 'rollup-plugin-svelte';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
@@ -55,15 +54,10 @@ export default {
 			compilerOptions: {
 				// enable run-time checks when not in production
 				dev: !production,
-			}
-			// we'll extract any component CSS out into
-			// a separate file - better for performance
-			//preprocess: preprocess(),
-			//css: css => {
-			//	css.write('bundle.css');
-			//}
+				
+			},
+			preprocess: preprocess(),
 		}),
-		//postcss(),
 		css({ output: 'bundle.css' }),
 
 		// If you have external dependencies installed from
