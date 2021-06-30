@@ -36,7 +36,6 @@
   ]
 
   onMount(async () => {
-    console.log('onMount')
     fetch(
       `https://raw.githubusercontent.com/GregaVrbancic/Phishing-Dataset/master/dataset_full.csv`,
     )
@@ -82,7 +81,6 @@
   }
 
   const onComplete = (results, file) => {
-    console.log('Parsing complete')
     selectedPhishing = countPhishing
     selectedLegitimate = countLegitimate
     rowsPreview = rows // rows.slice(0, 30)
@@ -143,6 +141,7 @@
     if (!selectedFeaturesArr.includes('phishing')) {
       console.log('The "phishing" attribute is required!')
       open(Message, { message: 'The "phishing" attribute is required!' })
+      isDownloading = false
       return
     }
 
@@ -264,7 +263,7 @@
               {selectedLegitimate}/{countLegitimate}
               <label for="selectFeatures">
                 Select features:
-                <a href="#" on:click={showAttributesInfo}>
+                <a href={"#"} on:click={showAttributesInfo}>
                   <InfoIcon size="1.5x" />
                 </a>
               </label>
@@ -309,7 +308,7 @@
         {:else}
           <p class="subtitle">Download your custom dataset variation.</p>
           <div style="text-align:center;">
-            <a class="{isDownloading ? 'button is-success is-loading' : 'button is-success'}" href="#" on:click={downloadDataset}>
+            <a class="{isDownloading ? 'button is-success is-loading' : 'button is-success'}" href={"#"} on:click={downloadDataset}>
               Download
             </a>
             <p>It may take a while to prepare and dowload the csv file. So please be patient</p>

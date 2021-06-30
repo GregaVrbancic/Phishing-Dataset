@@ -64,7 +64,7 @@ $border: #efefef;
       <h1>Phishing Datasets Web App</h1>
     </a>
 
-    <a role="button" href="#" aria-label="menu" aria-expanded="false" on:click="{() => isHamburgerActive = !isHamburgerActive}" class="{isHamburgerActive ? 'navbar-burger burger is-active' : 'navbar-burger burger'}" data-target="navbar">
+    <a role="button" href={"#"} aria-label="menu" aria-expanded="false" on:click="{() => isHamburgerActive = !isHamburgerActive}" class="{isHamburgerActive ? 'navbar-burger burger is-active' : 'navbar-burger burger'}" data-target="navbar">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
