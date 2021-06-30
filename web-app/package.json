@@ -19,7 +19,7 @@
     "rollup-plugin-livereload": "^2.0.0",
     "rollup-plugin-svelte": "^7.0.0",
     "rollup-plugin-terser": "^7.0.0",
-    "svelte": "^3.0.0",
+    "svelte": "^3.38.3",
     "svelte-feather-icons": "^3.3.0"
   },
   "dependencies": {
@@ -27,6 +27,7 @@
     "fusioncharts": "^3.15.3",
     "node-sass": "^5.0.0",
     "papaparse": "^5.3.0",
+    "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-postcss": "^3.1.8",
     "sirv-cli": "^1.0.0",
     "svelte-content-loader": "^1.1.3",
