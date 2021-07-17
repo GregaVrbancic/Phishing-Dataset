@@ -23,7 +23,7 @@ specifiers:
   svelte-feather-icons: ^3.3.0
   svelte-fusioncharts: ^1.0.0
   svelte-preprocess: ^4.5.1
-  svelte-select: ^3.12.0
+  svelte-select: ^4.2.6
   svelte-simple-modal: ^1.0.0
 
 dependencies:
@@ -39,7 +39,7 @@ dependencies:
   svelte-data-grid: 3.0.0
   svelte-fusioncharts: 1.0.0
   svelte-preprocess: 4.5.1_ec2edac5522a8cba693a9d7a4030e6da
-  svelte-select: 3.12.0
+  svelte-select: 4.2.6
   svelte-simple-modal: 1.0.0_svelte@3.38.3
 
 devDependencies:
@@ -3194,8 +3194,8 @@ packages:
       svelte: 3.38.3
     dev: false
 
-  /svelte-select/3.12.0:
-    resolution: {integrity: sha512-M57BG2nUedYP8c25geuYE7gOT2RZfLMaMFKJ6kEASouyMcmwRUr7rEbSWQa+q0c46r7EVnVRjb2GvohD+Gbirw==}
+  /svelte-select/4.2.6:
+    resolution: {integrity: sha512-Vg5l3CohyT7FOBaLXAm5+nXTDWyE2X3JmD2QesvzMD38KT04FfM2KOpwMaNNO4VZcJAahldW7tDa1VGibXRyeQ==}
     dev: false
 
   /svelte-simple-modal/1.0.0_svelte@3.38.3:
