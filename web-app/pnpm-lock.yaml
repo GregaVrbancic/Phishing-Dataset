@@ -24,7 +24,7 @@ specifiers:
   svelte-fusioncharts: ^1.0.0
   svelte-preprocess: ^4.5.1
   svelte-select: ^3.12.0
-  svelte-simple-modal: ^0.10.4
+  svelte-simple-modal: ^1.0.0
 
 dependencies:
   bulma: 0.9.1
@@ -40,7 +40,7 @@ dependencies:
   svelte-fusioncharts: 1.0.0
   svelte-preprocess: 4.5.1_ec2edac5522a8cba693a9d7a4030e6da
   svelte-select: 3.12.0
-  svelte-simple-modal: 0.10.4_svelte@3.38.3
+  svelte-simple-modal: 1.0.0_svelte@3.38.3
 
 devDependencies:
   '@rollup/plugin-commonjs': 19.0.0_rollup@2.52.4
@@ -3198,8 +3198,8 @@ packages:
     resolution: {integrity: sha512-M57BG2nUedYP8c25geuYE7gOT2RZfLMaMFKJ6kEASouyMcmwRUr7rEbSWQa+q0c46r7EVnVRjb2GvohD+Gbirw==}
     dev: false
 
-  /svelte-simple-modal/0.10.4_svelte@3.38.3:
-    resolution: {integrity: sha512-fbv32U6RwxsEnOGgGhCUYpVypRIaaIMsw0tvXvRnnK5c0tYb22DeLVvSc1IVsYtVbCjKuiKRWawO8C6km/9lDA==}
+  /svelte-simple-modal/1.0.0_svelte@3.38.3:
+    resolution: {integrity: sha512-xHfbNiD43WF7TLNkWT4yo1OPrAUkANvwTbejn9ix4n8V/KxlfqiTFmQoQlVSlR/ipfyVqh/lG5h1ZoEkHEUvlg==}
     peerDependencies:
       svelte: ^3.18.2
     dependencies:
