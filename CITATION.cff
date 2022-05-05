@@ -1,0 +1,18 @@
+# YAML 1.2
+---
+authors: 
+  -
+    family-names: "Vrbančič"
+    given-names: Grega
+  -
+    family-names: "Fister Jr."
+    given-names: Iztok
+  -
+    family-names: "Podgorelec"
+    given-names: Vili
+cff-version: "1.1.0"
+date-released: 2020
+doi: "10.1016/j.dib.2020.106438"
+license: MIT
+title: "Datasets for Phishing Websites Detection"
+...
