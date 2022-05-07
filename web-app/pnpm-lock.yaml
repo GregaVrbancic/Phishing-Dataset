@@ -1,7 +1,7 @@
-lockfileVersion: 5.3
+lockfileVersion: 5.4
 
 specifiers:
-  '@rollup/plugin-commonjs': ^21.0.1
+  '@rollup/plugin-commonjs': ^22.0.0
   '@rollup/plugin-node-resolve': ^13.0.0
   '@rollup/plugin-url': ^6.0.0
   bulma: ^0.9.1
@@ -38,18 +38,18 @@ dependencies:
   svelte-content-loader: 1.1.3
   svelte-data-grid: 3.0.0
   svelte-fusioncharts: 1.0.0
-  svelte-preprocess: 4.5.1_cd8c4a93ec00fa9b75b48f4b943db086
+  svelte-preprocess: 4.5.1_zwgeve7mad5jw5nur5fzipnqqy
   svelte-select: 4.2.6
   svelte-simple-modal: 1.0.0_svelte@3.38.3
 
 devDependencies:
-  '@rollup/plugin-commonjs': 21.0.1_rollup@2.52.4
+  '@rollup/plugin-commonjs': 22.0.0_rollup@2.52.4
   '@rollup/plugin-node-resolve': 13.0.0_rollup@2.52.4
   '@rollup/plugin-url': 6.0.0_rollup@2.52.4
   gh-pages: 3.1.0
   rollup: 2.52.4
   rollup-plugin-livereload: 2.0.0
-  rollup-plugin-svelte: 7.0.0_rollup@2.52.4+svelte@3.38.3
+  rollup-plugin-svelte: 7.0.0_kmugut5i5pn7pzbbx2oxyt24zu
   rollup-plugin-terser: 7.0.2_rollup@2.52.4
   svelte: 3.38.3
   svelte-feather-icons: 3.3.0
@@ -189,11 +189,11 @@ packages:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: false
 
-  /@rollup/plugin-commonjs/21.0.1_rollup@2.52.4:
-    resolution: {integrity: sha512-EA+g22lbNJ8p5kuZJUYyhhDK7WgJckW5g4pNN7n4mAFUM96VuwUnNT3xr2Db2iCZPI1pJPbGyfT5mS9T1dHfMg==}
-    engines: {node: '>= 8.0.0'}
+  /@rollup/plugin-commonjs/22.0.0_rollup@2.52.4:
+    resolution: {integrity: sha512-Ktvf2j+bAO+30awhbYoCaXpBcyPmJbaEUYClQns/+6SNCYFURbvBiNbWgHITEsIgDDWCDUclWRKEuf8cwZCFoQ==}
+    engines: {node: '>= 12.0.0'}
     peerDependencies:
-      rollup: ^2.38.3
+      rollup: ^2.68.0
     dependencies:
       '@rollup/pluginutils': 3.1.0_rollup@2.52.4
       commondir: 1.0.1
@@ -2993,7 +2993,7 @@ packages:
       - ts-node
     dev: false
 
-  /rollup-plugin-svelte/7.0.0_rollup@2.52.4+svelte@3.38.3:
+  /rollup-plugin-svelte/7.0.0_kmugut5i5pn7pzbbx2oxyt24zu:
     resolution: {integrity: sha512-cw4yv/5v1NQV3nPbpOJtikgkB+9mfSJaqKUdq7x5fVQJnwLtcdc2JOszBs5pBY+SemTs5pmJbdEMseEavbUtjQ==}
     engines: {node: '>=10'}
     peerDependencies:
@@ -3400,7 +3400,7 @@ packages:
     resolution: {integrity: sha512-OZk9thwMBHts7TVVIcTT8l9oEgzy6ppXLOtdf7gazobefddW3a0IXqe4mbBDWqLqxXBDyAePmRafZnu8Pc3rng==}
     dev: false
 
-  /svelte-preprocess/4.5.1_cd8c4a93ec00fa9b75b48f4b943db086:
+  /svelte-preprocess/4.5.1_zwgeve7mad5jw5nur5fzipnqqy:
     resolution: {integrity: sha512-fZiLMg+mJzp5y4bsvBtl6wE1WCp+s5L87BoKMONGLXk8HSZD5HuRJzxhM0yhM9LHF0jP5kYG22P2Vc/vrv4I0A==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
