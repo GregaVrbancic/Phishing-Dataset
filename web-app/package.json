@@ -20,7 +20,7 @@
     "rollup-plugin-svelte": "^7.0.0",
     "rollup-plugin-terser": "^7.0.0",
     "svelte": "^3.38.3",
-    "svelte-feather-icons": "^3.3.0"
+    "svelte-feather-icons": "^4.0.0"
   },
   "dependencies": {
     "bulma": "^0.9.1",
