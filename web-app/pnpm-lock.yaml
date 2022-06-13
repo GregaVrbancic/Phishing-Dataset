@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@rollup/plugin-commonjs': ^22.0.0
-  '@rollup/plugin-node-resolve': ^13.0.0
+  '@rollup/plugin-node-resolve': ^13.3.0
   '@rollup/plugin-url': ^7.0.0
   bulma: ^0.9.1
   fusioncharts: ^3.15.3
@@ -44,7 +44,7 @@ dependencies:
 
 devDependencies:
   '@rollup/plugin-commonjs': 22.0.0_rollup@2.75.6
-  '@rollup/plugin-node-resolve': 13.0.0_rollup@2.75.6
+  '@rollup/plugin-node-resolve': 13.3.0_rollup@2.75.6
   '@rollup/plugin-url': 7.0.0_rollup@2.75.6
   gh-pages: 4.0.0
   rollup: 2.75.6
@@ -205,16 +205,16 @@ packages:
       rollup: 2.75.6
     dev: true
 
-  /@rollup/plugin-node-resolve/13.0.0_rollup@2.75.6:
-    resolution: {integrity: sha512-41X411HJ3oikIDivT5OKe9EZ6ud6DXudtfNrGbC4nniaxx2esiWjkLOzgnZsWq1IM8YIeL2rzRGLZLBjlhnZtQ==}
+  /@rollup/plugin-node-resolve/13.3.0_rollup@2.75.6:
+    resolution: {integrity: sha512-Lus8rbUo1eEcnS4yTFKLZrVumLPY+YayBdWXgFSHYhTT2iJbMhoaaBL3xl5NCdeRytErGr8tZ0L71BMRmnlwSw==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
       rollup: ^2.42.0
     dependencies:
       '@rollup/pluginutils': 3.1.0_rollup@2.75.6
       '@types/resolve': 1.17.1
-      builtin-modules: 3.1.0
       deepmerge: 4.2.2
+      is-builtin-module: 3.1.0
       is-module: 1.0.0
       resolve: 1.19.0
       rollup: 2.75.6
@@ -506,8 +506,8 @@ packages:
     resolution: {integrity: sha512-MQcXEUbCKtEo7bhqEs6560Hyd4XaovZlO/k9V3hjVUF/zwW7KBVdSK4gIt/bzwS9MbR5qob+F5jusZsb0YQK2A==}
     dev: true
 
-  /builtin-modules/3.1.0:
-    resolution: {integrity: sha512-k0KL0aWZuBt2lrxrcASWDfwOLMnodeQjodT/1SxEQAXsHANgo6ZC/VEaSEHCXt7aSTZ4/4H5LKa+tBXmW7Vtvw==}
+  /builtin-modules/3.3.0:
+    resolution: {integrity: sha512-zhaCDicdLuWN5UbN5IMnFqNMhNfo919sH85y2/ea+5Yg9TsTkeZxpL+JLbp6cgYFS4sRLp3YV4S6yDuqVWHYOw==}
     engines: {node: '>=6'}
     dev: true
 
@@ -1575,6 +1575,13 @@ packages:
     dependencies:
       call-bind: 1.0.2
     dev: false
+
+  /is-builtin-module/3.1.0:
+    resolution: {integrity: sha512-OV7JjAgOTfAFJmHZLvpSTb4qi0nIILDV1gWPYDnDJUTNFM5aGlRAhk4QcT8i7TuAleeEV5Fdkqn3t4mS+Q11fg==}
+    engines: {node: '>=6'}
+    dependencies:
+      builtin-modules: 3.3.0
+    dev: true
 
   /is-callable/1.2.3:
     resolution: {integrity: sha512-J1DcMe8UYTBSrKezuIUTUwjXsho29693unXM2YhJUTR2txK/eG47bvNa/wipPFmZFgr/N6f1GA66dv0mEyTIyQ==}
