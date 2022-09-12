@@ -43,9 +43,9 @@ dependencies:
   svelte-simple-modal: 1.0.0_svelte@3.38.3
 
 devDependencies:
-  '@rollup/plugin-commonjs': 22.0.0_rollup@2.78.1
-  '@rollup/plugin-node-resolve': 14.0.1_rollup@2.78.1
-  '@rollup/plugin-url': 7.0.0_rollup@2.78.1
+  '@rollup/plugin-commonjs': 22.0.0_rollup@2.79.0
+  '@rollup/plugin-node-resolve': 14.0.1_rollup@2.79.0
+  '@rollup/plugin-url': 7.0.0_rollup@2.79.0
   gh-pages: 4.0.0
   rollup: 2.79.0
   rollup-plugin-livereload: 2.0.0
@@ -205,13 +205,8 @@ packages:
       rollup: 2.79.0
     dev: true
 
-<<<<<<< HEAD
-  /@rollup/plugin-node-resolve/14.0.1_rollup@2.78.1:
+  /@rollup/plugin-node-resolve/14.0.1_rollup@2.79.0:
     resolution: {integrity: sha512-YvSs0ev00QWTQS8u+yaCJkIUPBgpmBsnzRJFvg8c2chbky85ZKoZtoNuRH0k9rjZT4xpgEPOiVTyeJTj1/iMdQ==}
-=======
-  /@rollup/plugin-node-resolve/13.3.0_rollup@2.79.0:
-    resolution: {integrity: sha512-Lus8rbUo1eEcnS4yTFKLZrVumLPY+YayBdWXgFSHYhTT2iJbMhoaaBL3xl5NCdeRytErGr8tZ0L71BMRmnlwSw==}
->>>>>>> fec2a1ee7602fd5d506ef584062091320b4057b4
     engines: {node: '>= 10.0.0'}
     peerDependencies:
       rollup: ^2.78.0
@@ -221,13 +216,8 @@ packages:
       deepmerge: 4.2.2
       is-builtin-module: 3.1.0
       is-module: 1.0.0
-<<<<<<< HEAD
       resolve: 1.20.0
-      rollup: 2.78.1
-=======
-      resolve: 1.19.0
       rollup: 2.79.0
->>>>>>> fec2a1ee7602fd5d506ef584062091320b4057b4
     dev: true
 
   /@rollup/plugin-url/7.0.0_rollup@2.79.0:
