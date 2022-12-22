@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@rollup/plugin-commonjs': ^22.0.0
-  '@rollup/plugin-node-resolve': ^14.0.1
+  '@rollup/plugin-node-resolve': ^15.0.1
   '@rollup/plugin-url': ^8.0.1
   bulma: ^0.9.1
   fusioncharts: ^3.15.3
@@ -44,7 +44,7 @@ dependencies:
 
 devDependencies:
   '@rollup/plugin-commonjs': 22.0.0_rollup@2.79.0
-  '@rollup/plugin-node-resolve': 14.0.1_rollup@2.79.0
+  '@rollup/plugin-node-resolve': 15.0.1_rollup@2.79.0
   '@rollup/plugin-url': 8.0.1_rollup@2.79.0
   gh-pages: 4.0.0
   rollup: 2.79.0
@@ -205,18 +205,21 @@ packages:
       rollup: 2.79.0
     dev: true
 
-  /@rollup/plugin-node-resolve/14.0.1_rollup@2.79.0:
-    resolution: {integrity: sha512-YvSs0ev00QWTQS8u+yaCJkIUPBgpmBsnzRJFvg8c2chbky85ZKoZtoNuRH0k9rjZT4xpgEPOiVTyeJTj1/iMdQ==}
-    engines: {node: '>= 10.0.0'}
+  /@rollup/plugin-node-resolve/15.0.1_rollup@2.79.0:
+    resolution: {integrity: sha512-ReY88T7JhJjeRVbfCyNj+NXAG3IIsVMsX9b5/9jC98dRP8/yxlZdz7mHZbHk5zHr24wZZICS5AcXsFZAXYUQEg==}
+    engines: {node: '>=14.0.0'}
     peerDependencies:
-      rollup: ^2.78.0
+      rollup: ^2.78.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
     dependencies:
-      '@rollup/pluginutils': 3.1.0_rollup@2.79.0
-      '@types/resolve': 1.17.1
+      '@rollup/pluginutils': 5.0.2_rollup@2.79.0
+      '@types/resolve': 1.20.2
       deepmerge: 4.2.2
-      is-builtin-module: 3.1.0
+      is-builtin-module: 3.2.0
       is-module: 1.0.0
-      resolve: 1.20.0
+      resolve: 1.22.1
       rollup: 2.79.0
     dev: true
 
@@ -254,7 +257,7 @@ packages:
       rollup: ^1.20.0||^2.0.0
     dependencies:
       estree-walker: 2.0.2
-      picomatch: 2.3.0
+      picomatch: 2.3.1
       rollup: 2.79.0
     dev: false
 
@@ -309,10 +312,8 @@ packages:
     resolution: {integrity: sha512-1HcDas8SEj4z1Wc696tH56G8OlRaH/sqZOynNNB+HF0WOeXPaxTtbYzJY2oEfiUxjSKjhCKr+MvR7dCHcEelug==}
     dev: false
 
-  /@types/resolve/1.17.1:
-    resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==}
-    dependencies:
-      '@types/node': 14.11.10
+  /@types/resolve/1.20.2:
+    resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
     dev: true
 
   /@types/sass/1.16.0:
@@ -400,7 +401,7 @@ packages:
     engines: {node: '>= 8'}
     dependencies:
       normalize-path: 3.0.0
-      picomatch: 2.3.0
+      picomatch: 2.3.1
     dev: true
 
   /aproba/1.2.0:
@@ -1597,8 +1598,8 @@ packages:
       call-bind: 1.0.2
     dev: false
 
-  /is-builtin-module/3.1.0:
-    resolution: {integrity: sha512-OV7JjAgOTfAFJmHZLvpSTb4qi0nIILDV1gWPYDnDJUTNFM5aGlRAhk4QcT8i7TuAleeEV5Fdkqn3t4mS+Q11fg==}
+  /is-builtin-module/3.2.0:
+    resolution: {integrity: sha512-phDA4oSGt7vl1n5tJvTWooWWAsXLY+2xCnxNqvKhGEzujg+A43wPlPOyDg3C8XQHN+6k/JTQWJ/j0dQh/qr+Hw==}
     engines: {node: '>=6'}
     dependencies:
       builtin-modules: 3.3.0
@@ -1619,6 +1620,11 @@ packages:
       rgb-regex: 1.0.1
       rgba-regex: 1.0.0
     dev: false
+
+  /is-core-module/2.11.0:
+    resolution: {integrity: sha512-RRjxlvLDkD1YJwDbroBHMb+cukurkDWNyHx7D3oNB5x9rb5ogcksMC5wHCadcXoo67gVr/+3GFySh3134zi6rw==}
+    dependencies:
+      has: 1.0.3
 
   /is-core-module/2.4.0:
     resolution: {integrity: sha512-6A2fkfq1rfeQZjxrZJGerpLCTHRNEBiSgnu0+obeJpEPZRUooHgsizvzv0ZjJwOz3iWIHdJtVWJ/tmPr3D21/A==}
@@ -2173,7 +2179,7 @@ packages:
     resolution: {integrity: sha512-/5CMN3T0R4XTj4DcGaexo+roZSdSFW/0AOOTROrjxzCG1wrWXEsGbRKevjlIL+ZDE4sZlJr5ED4YW0yqmkK+eA==}
     dependencies:
       hosted-git-info: 2.8.8
-      resolve: 1.20.0
+      resolve: 1.22.1
       semver: 5.7.1
       validate-npm-package-license: 3.0.4
     dev: false
@@ -2183,7 +2189,7 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       hosted-git-info: 4.0.2
-      resolve: 1.20.0
+      resolve: 1.22.1
       semver: 7.3.5
       validate-npm-package-license: 3.0.4
     dev: false
@@ -2370,11 +2376,11 @@ packages:
   /picomatch/2.3.0:
     resolution: {integrity: sha512-lY1Q/PiJGC2zOv/z391WOTD+Z02bCgsFfvxoXXf6h7kv9o+WmsmzYqrAwY63sNgOxE4xEdq0WyUnXfKeBrSvYw==}
     engines: {node: '>=8.6'}
+    dev: true
 
   /picomatch/2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
-    dev: true
 
   /pify/2.3.0:
     resolution: {integrity: sha1-7RQaasBDqEnqWISY59yosVMw6Qw=}
@@ -2872,7 +2878,7 @@ packages:
     resolution: {integrity: sha512-cMhu7c/8rdhkHXWsY+osBhfSy0JikwpHK/5+imo+LpeasTF8ouErHrlYkwT0++njiyuDvc7OFY5T3ukvZ8qmFQ==}
     engines: {node: '>=8.10.0'}
     dependencies:
-      picomatch: 2.3.0
+      picomatch: 2.3.1
     dev: true
 
   /redent/3.0.0:
@@ -2938,6 +2944,14 @@ packages:
     dependencies:
       is-core-module: 2.4.0
       path-parse: 1.0.7
+
+  /resolve/1.22.1:
+    resolution: {integrity: sha512-nBpuuYuY5jFsli/JIs1oldw6fOQCBioohqWZg/2hiaOybXOft4lonv85uDOKXdf8rhyK159cxU5cDcK/NKk8zw==}
+    hasBin: true
+    dependencies:
+      is-core-module: 2.11.0
+      path-parse: 1.0.7
+      supports-preserve-symlinks-flag: 1.0.0
 
   /retry/0.12.0:
     resolution: {integrity: sha1-G0KmJmoh8HQh0bC1S33BZ7AcATs=}
@@ -3371,6 +3385,10 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       has-flag: 4.0.0
+
+  /supports-preserve-symlinks-flag/1.0.0:
+    resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
+    engines: {node: '>= 0.4'}
 
   /svelte-content-loader/1.1.3:
     resolution: {integrity: sha512-hXkwyAXiZ+2uNvWUHPj9U7M+8PGqgZVFNxyOHjLUF1ng4W9P9+9wlyT/bNx5BjuqoJsfjv1IZP1/5T1LfRKtYA==}
